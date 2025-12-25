@@ -10,3 +10,5 @@
 #include <Eigen/Dense>
 
 #include "Foo/foo.hpp"
+#include "Contact/Polygon.hpp"
+#include "Contact/InnerApproxHull.hpp"
