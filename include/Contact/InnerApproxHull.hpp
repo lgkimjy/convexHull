@@ -180,7 +180,7 @@ public:
 };
 
 // Helper function to compute percentile
-double percentile(const std::vector<double>& values, double p) {
+inline double percentile(const std::vector<double>& values, double p) {
     if (values.empty()) return 0.0;
     
     std::vector<double> sorted = values;
@@ -199,7 +199,7 @@ double percentile(const std::vector<double>& values, double p) {
 }
 
 // Helper function to compute convex hull area
-double computeHullArea(const std::vector<ContactPoint>& hull) {
+inline double computeHullArea(const std::vector<ContactPoint>& hull) {
     if (hull.size() < 3) return 0.0;
     
     double area = 0.0;
@@ -213,7 +213,7 @@ double computeHullArea(const std::vector<ContactPoint>& hull) {
 }
 
 // Helper function for convex hull (using Graham scan from Polygon.hpp)
-std::vector<ContactPoint> computeConvexHull(std::vector<ContactPoint> points) {
+inline std::vector<ContactPoint> computeConvexHull(std::vector<ContactPoint> points) {
     if (points.size() < 3) return points;
     
     int n = points.size(), k = 0;
@@ -250,7 +250,7 @@ struct InnerApproxHull {
     bool success;
 };
 
-InnerApproxHull find_best_inner_hull(
+inline InnerApproxHull find_best_inner_hull(
     const std::vector<ContactPoint>& feasible_points,
     const std::vector<ContactPoint>* sample_points = nullptr,
     double safe_margin = 0.05
